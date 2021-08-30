@@ -1,5 +1,6 @@
 const TicTacToe = require('./src/tic-tac-toe.js');
 
+
 window.game = new TicTacToe();
 
 resetBtn.addEventListener('click', () => {
@@ -33,6 +34,8 @@ gameCanvas.addEventListener('click', e => {
     const rowIndex = Array.from(gameCanvas.children).indexOf(e.target.parentNode);
     const colIndex = Array.from(e.target.parentNode.children).indexOf(e.target);
 
+    // console.log(gameCanvas.children);
+
     game.nextTurn(rowIndex, colIndex);
 
     const winner = game.getWinner();
@@ -56,3 +59,7 @@ gameCanvas.addEventListener('click', e => {
         }, 10);
     }
 })
+
+
+
+
